@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Тортики & Тістечка</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<h1>Тортики <span>&</span> Тістечка</h1>
+
+<div class="container">
+
+
+  <input type="radio" name="type" id="f-all" checked>
+  <input type="radio" name="type" id="f-pirig">
+  <input type="radio" name="type" id="f-rulet">
+  <input type="radio" name="type" id="f-syrnyk">
+  <input type="radio" name="type" id="f-tistechko">
+  <input type="radio" name="type" id="f-tort">
+
+  
+  <input type="radio" name="cal" id="cal-all" checked>
+  <input type="radio" name="cal" id="cal-0-400">
+
+  <div class="top-filters">
+    <label for="f-pirig">Пиріг</label>
+    <label for="f-rulet">Рулет</label>
+    <label for="f-syrnyk">Сирники</label>
+    <label for="f-tistechko">Тістечко</label>
+    <label for="f-tort">Торт</label>
+    <label for="f-all">Скинути</label>
+  </div>
+
+  <div class="layout">
+    <div class="grid">
+      <div class="card tort" data-calories="265"><img src="01.jpg"><div class="card-body"><div class="title">Торт: <b>Сметанковий</b></div><div class="divider"></div><div class="cal">265 Ккал</div></div></div>
+      <div class="card tistechko" data-calories="305"><img src="02.jpg"><div class="card-body"><div class="title">Тістечко: <b>Мафін</b></div><div class="divider"></div><div class="cal">305 Ккал</div></div></div>
+      <div class="card syrnyk" data-calories="450"><img src="03.jpg"><div class="card-body"><div class="title">Сирники: <b>Три ягоди</b></div><div class="divider"></div><div class="cal">450 Ккал</div></div></div>
+      <div class="card tort" data-calories="523"><img src="04.jpg"><div class="card-body"><div class="title">Торт: <b>Смачний</b></div><div class="divider"></div><div class="cal">523 Ккал</div></div></div>
+      <div class="card rulet" data-calories="380"><img src="05.jpg"><div class="card-body"><div class="title">Рулет: <b>Святковий</b></div><div class="divider"></div><div class="cal">380 Ккал</div></div></div>
+      <div class="card pirig" data-calories="298"><img src="06.jpg"><div class="card-body"><div class="title">Пиріг: <b>Свято у бабусі</b></div><div class="divider"></div><div class="cal">298 Ккал</div></div></div>
+      <div class="card tistechko" data-calories="438"><img src="07.jpg"><div class="card-body"><div class="title">Тістечко: <b>Живі квіти</b></div><div class="divider"></div><div class="cal">438 Ккал</div></div></div>
+      <div class="card tistechko" data-calories="348"><img src="08.jpg"><div class="card-body"><div class="title">Тістечко: <b>Лимонне з маком</b></div><div class="divider"></div><div class="cal">348 Ккал</div></div></div>
+      <div class="card tort" data-calories="600"><img src="09.jpg"><div class="card-body"><div class="title">Торт: <b>Ведмедик</b></div><div class="divider"></div><div class="cal">600 Ккал</div></div></div>
+    </div>
+
+    <aside class="desktop-filters">
+      <!-- Фільтр калорій  -->
+      <div class="calorie-filter">
+        <b>Калорії у порції</b>
+        <div class="calorie-range">
+          <div class="calorie-slider">
+            <div class="slider-track"></div>
+            <div class="slider-fill"></div>
+            <div class="slider-thumb"></div>
+          </div>
+          <div class="calorie-labels">
+            <span>0</span>
+            <span>600</span>
+          </div>
+        </div>
+        <div class="calorie-info">Від 0 до 400 кКал</div>
+        <div class="calorie-buttons">
+        </div>
+      </div>
+
+      <!-- Фільтри за типами -->
+      <div class="filter-group">
+        <b>Фільтр за типами</b>
+        <div class="filter-buttons">
+          <label for="f-pirig">Пиріг</label>
+          <label for="f-rulet">Рулет</label>
+          <label for="f-syrnyk">Сирники</label>
+          <label for="f-tistechko">Тістечко</label>
+          <label for="f-tort">Торт</label>
+        </div>
+      </div>
+
+      <!-- Кнопка скидання всіх фільтрів -->
+      <div class="filter-buttons">
+        <label for="f-all" style="flex: 1; min-width: 100%;">Скинути фільтри</label>
+      </div>
+    </aside>
+
+</body>
+</html>

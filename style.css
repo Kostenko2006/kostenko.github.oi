@@ -1,0 +1,331 @@
+   * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f6f7f8;
+      color: #1f2d3d;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      font-weight: 500;
+    }
+    h1 span { color: #e84b5f; }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    input[type="radio"] { display: none; }
+
+    /* ===== СІТКА ===== */
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .card-body {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .title { font-size: 14px; }
+    .divider {
+      height: 1px;
+      background: #ddd;
+      margin: 6px 0;
+    }
+    .cal {
+      font-size: 13px;
+      margin-top: auto;
+      color: #666;
+    }
+
+    /* ===== ФІЛЬТР ТИПІВ ===== */
+    #f-tort:checked ~ .layout .grid .card:not(.tort),
+    #f-pirig:checked ~ .layout .grid .card:not(.pirig),
+    #f-rulet:checked ~ .layout .grid .card:not(.rulet),
+    #f-syrnyk:checked ~ .layout .grid .card:not(.syrnyk),
+    #f-tistechko:checked ~ .layout .grid .card:not(.tistechko) {
+      filter: grayscale(100%);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+
+    
+    .desktop-filters {
+      background: #f0f2f1;
+      padding: 20px;
+      border-radius: 6px;
+      display: none; 
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .filter-group b {
+      font-size: 14px;
+      color: #1f2d3d;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-buttons label {
+      padding: 8px 12px;
+      background: #e3e6e5;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: all 0.2s ease;
+      flex: 1;
+      min-width: calc(50% - 4px);
+      text-align: center;
+    }
+
+    .filter-buttons label:hover {
+      background: #cfd6d4;
+    }
+
+    input[type="radio"]:checked + label {
+      background: #cfd6d4;
+      font-weight: bold;
+      box-shadow: inset 0 0 0 1px #9aa5a1;
+    }
+
+    
+    .calorie-filter {
+      background: #fff;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+
+    .calorie-filter b {
+      display: block;
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #1f2d3d;
+    }
+
+    .calorie-range {
+      margin-bottom: 15px;
+    }
+
+    .calorie-slider {
+      position: relative;
+      height: 20px;
+      margin: 10px 0;
+    }
+
+    .slider-track {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: #ddd;
+      border-radius: 3px;
+      transform: translateY(-50%);
+    }
+
+    .slider-fill {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 66.66%; 
+      height: 6px;
+      background: #9aa5a1;
+      border-radius: 3px;
+      transform: translateY(-50%);
+    }
+
+    .slider-thumb {
+      position: absolute;
+      top: 50%;
+      left: 66.66%; 
+      width: 20px;
+      height: 20px;
+      background: #9aa5a1;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid #fff;
+      box-shadow: 0 0 3px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+
+    .calorie-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #777;
+      margin-top: 5px;
+    }
+
+    .calorie-info {
+      text-align: center;
+      font-size: 13px;
+      color: #555;
+      margin: 15px 0;
+      padding: 8px;
+      background: #f9f9f9;
+      border-radius: 4px;
+      border: 1px solid #eee;
+    }
+
+    .calorie-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .calorie-buttons label {
+      flex: 1;
+      text-align: center;
+      padding: 10px 0;
+      background: #e3e6e5;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background 0.2s ease;
+    }
+
+    .calorie-buttons label:hover {
+      background: #cfd6d4;
+    }
+
+    .top-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .top-filters label {
+      padding: 10px 16px;
+      background: #e3e6e5;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .top-filters label:hover {
+      background: #cfd6d4;
+    }
+
+    .top-filters input[type="radio"]:checked + label {
+      background: #cfd6d4;
+      font-weight: bold;
+      box-shadow: inset 0 0 0 1px #9aa5a1;
+    }
+
+
+    /* ===== МОБІЛЬНІ ===== */
+    @media (max-width: 730px) {
+      .grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 6px; text-align: center; }
+      
+      .desktop-filters {
+        display: none !important;
+      }
+      
+      .top-filters {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 5px;
+      }
+      
+      .top-filters label {
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+    }
+
+    /* ===== ПЛАНШЕТ ===== */
+    @media (min-width: 730px) and (max-width: 1200px) {
+      .grid { grid-template-columns: repeat(3, 1fr); }
+      footer { justify-content: center; }
+      
+      .desktop-filters {
+        display: none !important;
+      }
+      
+      .top-filters {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      .top-filters label {
+        flex: 1;
+        min-width: calc(20% - 8px);
+        text-align: center;
+      }
+    }
+
+    /* ===== ДЕСКТОП ===== */
+    @media (min-width: 1200px) {
+      .layout {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 20px;
+        align-items: start;
+      }
+      .grid { 
+        grid-template-columns: repeat(3, 1fr); 
+      }
+      
+      
+      .desktop-filters {
+        display: flex;
+        position: sticky;
+        top: 20px;
+        height: fit-content;
+      }
+      
+    
+      .top-filters {
+        display: none !important;
+      }
+    }
+ 
